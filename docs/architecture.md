@@ -28,6 +28,10 @@ The router fuses ranked lists with Reciprocal Rank Fusion and source priors. Con
 
 A focus brief is a task-local retrieval packet. It gives the agent a short cited context block without polluting canonical memory or the compaction DAG.
 
+### Skill layer
+
+Skills are procedural memory. They should be routed next to retrieved context, not treated as a substitute for it. A skill tells Hermes how to run a workflow; memory tells Hermes which user, repo, decision, prior failure, or active task state changes that workflow.
+
 ### Regression checks
 
 Memory fails quietly. The harness checks whether known queries still retrieve the expected source types and hints.

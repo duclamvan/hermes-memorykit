@@ -22,7 +22,9 @@ Benchmark pack: https://github.com/duclamvan/hermes-memory-benchmarks
   - retrieval regression checks
   - global stack verification
   - nightly maintenance
+- Hermes-native plugin wrapper with tools for status, routing, focus briefs, and regressions.
 - Config templates for `.env`, Hermes `config.yaml`, and cron prompts.
+- Skill-memory guidance so procedural skills and retrieved context work together.
 - Tests and CI so the public kit stays runnable.
 
 ## Who this is for
@@ -87,6 +89,29 @@ LCM_LARGE_OUTPUT_EXTERNALIZATION_THRESHOLD_CHARS=12000
 LCM_LARGE_OUTPUT_TRANSCRIPT_GC_ENABLED=false
 LCM_CONTEXT_THRESHOLD=0.70
 ```
+
+## Hermes plugin wrapper
+
+Install the optional Hermes plugin wrapper if you want these as native Hermes tools:
+
+```bash
+python scripts/install_hermes_plugin.py --hermes-home ~/.hermes --repo "$PWD" --force
+```
+
+Add the printed `MEMORY_STACK_REPO=...` line to `~/.hermes/.env`, then restart Hermes or run `/reset`.
+
+The plugin registers these tools in the `memory_stack` toolset:
+
+- `memory_stack_status`
+- `memory_stack_route`
+- `memory_stack_focus_brief`
+- `memory_stack_regress`
+
+## Skills and memory
+
+Hermes skills are already strong procedural recall. They still need memory around them. Skills answer **how**; LCM, native memory, QMD, and the graph answer **what context applies this time**.
+
+See `docs/skills-and-memory.md` for the promotion policy: when to keep a fact in LCM, when to save native memory, when to write docs, and when to create or update a skill.
 
 ## Nightly cron prompt
 

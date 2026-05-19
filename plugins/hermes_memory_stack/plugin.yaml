@@ -1,0 +1,5 @@
+name: hermes-memory-stack
+version: 0.2.0
+description: "Hermes-native tools for routing memory queries, generating focus briefs, running regressions, and checking stack health."
+author: Davie Lam
+kind: backend
