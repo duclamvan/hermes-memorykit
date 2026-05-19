@@ -1,6 +1,6 @@
-# Hermes memory stack
+# Hermes MemoryKit
 
-A practical memory stack for Hermes Agent users who want their agent to stop forgetting after long chats, cron runs, tool calls, and context compression.
+A practical memory kit for Hermes Agent users who want their agent to stop forgetting after long chats, cron runs, tool calls, and context compression.
 
 The design is simple:
 
@@ -11,6 +11,8 @@ raw transcript -> durable notes -> searchable docs -> entity graph -> RRF router
 This repo packages the implementation pattern behind my own Hermes memory setup. The companion benchmark repo shows the final score: **100/100 A+**, **27/27 retrieval checks passed**, and **35 Hermes profiles verified**.
 
 Benchmark pack: https://github.com/duclamvan/hermes-memory-benchmarks
+
+Current version: **v0.2.0**. See `CHANGELOG.md` for version history.
 
 ## What you get
 
@@ -51,8 +53,8 @@ Use this if your agent:
 ## Quick start
 
 ```bash
-git clone https://github.com/duclamvan/hermes-memory-stack.git
-cd hermes-memory-stack
+git clone https://github.com/duclamvan/hermes-memorykit.git
+cd hermes-memorykit
 python3 -m venv .venv
 . .venv/bin/activate
 pip install -e .[dev]
@@ -118,7 +120,7 @@ See `docs/skills-and-memory.md` for the promotion policy: when to keep a fact in
 Use a Hermes cron job that starts with token refresh, then runs maintenance:
 
 ```text
-Run preflight token refresh first. Then run the Hermes memory stack nightly maintenance from the repo. Summarize failures only, and include report paths.
+Run preflight token refresh first. Then run Hermes MemoryKit nightly maintenance from the repo. Summarize failures only, and include report paths.
 ```
 
 Example shell command for a local cron/script lane:

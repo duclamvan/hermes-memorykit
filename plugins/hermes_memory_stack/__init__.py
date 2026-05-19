@@ -1,4 +1,4 @@
-"""Hermes plugin wrapper for the public memory stack kit.
+"""Hermes plugin wrapper for Hermes MemoryKit.
 
 Install by copying this directory to ``~/.hermes/plugins/hermes_memory_stack``
 or by pointing ``MEMORY_STACK_REPO`` at a clone of this repository. The plugin
@@ -25,7 +25,7 @@ def _repo_root() -> Path:
     if (candidate / "scripts" / "memory_stack_router.py").exists():
         return candidate
     # If the plugin is copied alone, allow a sibling checkout next to it.
-    sibling = PLUGIN_DIR.parent / "hermes-memory-stack"
+    sibling = PLUGIN_DIR.parent / "hermes-memorykit"
     if (sibling / "scripts" / "memory_stack_router.py").exists():
         return sibling
     return candidate
@@ -45,7 +45,7 @@ def _run_script(script_name: str, args: list[str], timeout: int = 60) -> dict[st
         return {
             "status": "error",
             "error": f"missing script: {script}",
-            "hint": "Set MEMORY_STACK_REPO to a clone of duclamvan/hermes-memory-stack.",
+            "hint": "Set MEMORY_STACK_REPO to a clone of duclamvan/hermes-memorykit.",
         }
     proc = subprocess.run(
         [sys.executable, str(script), *args],
@@ -126,7 +126,7 @@ TOOLS = (
         "memory_stack_status",
         _schema(
             "memory_stack_status",
-            "Check Hermes memory stack health and path readiness.",
+            "Check Hermes MemoryKit health and path readiness.",
             {
                 "hermes_home": {"type": "string", "description": "Hermes home path. Defaults to HERMES_HOME or ~/.hermes."},
                 "workspace": {"type": "string", "description": "Workspace/repo path to verify. Defaults to MEMORY_STACK_WORKSPACE or the repo."},
@@ -186,7 +186,7 @@ TOOLS = (
 
 
 def register(ctx) -> None:
-    """Register Hermes memory stack tools."""
+    """Register Hermes MemoryKit tools."""
     for name, schema, handler, emoji in TOOLS:
         ctx.register_tool(
             name=name,

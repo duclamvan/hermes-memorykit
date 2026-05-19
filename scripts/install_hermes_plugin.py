@@ -10,7 +10,7 @@ PLUGIN_SRC = ROOT / "plugins" / "hermes_memory_stack"
 
 
 def main() -> None:
-    ap = argparse.ArgumentParser(description="Install the Hermes memory stack plugin wrapper.")
+    ap = argparse.ArgumentParser(description="Install the Hermes MemoryKit plugin wrapper.")
     ap.add_argument("--hermes-home", default="~/.hermes", help="Hermes home path, default: ~/.hermes")
     ap.add_argument("--repo", default=str(ROOT), help="Memory stack repo path used by plugin tools")
     ap.add_argument("--force", action="store_true", help="Replace an existing plugin directory")

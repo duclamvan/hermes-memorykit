@@ -2,7 +2,7 @@
 
 Hermes skills are procedural memory. They tell the agent how to do a class of work: when to use a workflow, which commands to run, what pitfalls to avoid, and how to verify the result.
 
-That does not replace the memory stack. It completes it.
+That does not replace Hermes MemoryKit. It completes it.
 
 ## Short answer
 

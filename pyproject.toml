@@ -1,7 +1,7 @@
 [project]
-name = "hermes-memory-stack"
-version = "0.1.0"
-description = "Public implementation kit for a layered Hermes Agent memory stack"
+name = "hermes-memorykit"
+version = "0.2.0"
+description = "Hermes MemoryKit: a layered memory stack implementation kit for Hermes Agent"
 requires-python = ">=3.10"
 dependencies = ["PyYAML>=6.0"]
 
